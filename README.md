@@ -1,1 +1,1 @@
-# stamina-frontend
+STAMINA
