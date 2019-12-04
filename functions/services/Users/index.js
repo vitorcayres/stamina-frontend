@@ -1,12 +1,11 @@
 const admin = require('firebase-admin');
 const app = require('express')();
-admin.initializeApp();
 const db = admin.firestore().collection('users');
 
 /**
  * List user
  */
-app.get('/', async (request, response) => {
+const listUser = app.get('/', async (request, response) => {
     try {
         const userQuerySnapshot = await db.get();
         const users = [];
@@ -37,7 +36,7 @@ app.get('/', async (request, response) => {
 /**
  * Insert user
  */
-app.post('/', async (request, response) => {
+const addUser = app.post('/', async (request, response) => {
     try {
         const data = {
             name: request.body.name,
@@ -67,7 +66,7 @@ app.post('/', async (request, response) => {
 /**
  * Update user
  */
-app.put('/:id', async (request, response) => {
+const updateUser = app.put('/:id', async (request, response) => {
     try {
         const userId = request.params.id;
         if (!userId) throw new Error('id is blank');
@@ -99,7 +98,7 @@ app.put('/:id', async (request, response) => {
 /**
  * Delete user
  */
-app.delete('/:id', async (request, response) => {
+const deleteUser = app.delete('/:id', async (request, response) => {
     try {
         const userId = request.params.id;
         if (!userId) throw new Error('id is blank');
@@ -113,4 +112,10 @@ app.delete('/:id', async (request, response) => {
     }
 });
 
-module.exports = app;
+
+module.exports = {
+    listUser,
+    addUser,
+    updateUser,
+    deleteUser
+};
