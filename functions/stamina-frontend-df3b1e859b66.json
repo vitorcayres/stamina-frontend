@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "stamina-frontend",
+  "private_key_id": "df3b1e859b66ae95ebb9ae3f66f056073cd72608",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDk1PNWX9CH6oPN\nfXvxbL7lqU7LHXh7GRHMTGDu5oRyIvBpt9KYiqlyqxet68xZZ4nDkSjkCWu2FSW4\nJw6NkgkFkc1qEv7VJZH/tf1fa3kKRv3f5ZQq8INaZySzxk3CMoGMVbZAoO3AC4xL\n9ZKqMFjOZU/Me94k5aEZgQysVuO37nnou+of2YOwp+cLBGJqVyIBsdF5cYzLPNNW\nv6XhysY7iK39onK+MALsZRai3JRwXogq2GMB1WZ7Ryo7hE0TeHRoKwR2EH9hy+qi\niIrYytU9qgnMwzmq5vTaoSh5dBjaprxOW/J627+jkUvFHfT1zmmVOvcKTFHvnTGM\nU0qjvN6RAgMBAAECggEAGh9FIq26vF6aaobR80lwBqpBLbv7g5yPr5FjL2JulCjw\n5jXvJdgOZ+H9c1k2Rq55x4ghRtwxyONjyZXhJMAa+jZ0CzvdOK/FRDpI5kT6gvXV\nCA4eephiJkZypiMTwADL+8fSZPukqFupHwgK6hVYI0I6zc5bbugtGnWPi3ePyfCJ\nVhcyf55oFtki9e0d0yoY+oDVxsV6FxwafwUwdUmOTfm0gQhXrFgNw/9d2hTnDwv3\ncQuPJjkZ0z3xmVi/wnWnhnKoKLk2OdF1ADq8Re6T0DZFXnVTgql8EOgi9DpwQ1KL\nuMZhDIALWGFeGUcrtDiP31JiKZFaQsSwdDUMkyBoUQKBgQD4DQ0rJFI1L78xhd0p\nhNLe1HEU7cihnN7fugFMMh0ODnZK6H803Nk+XyBF3MFup3LeYrEeC6umatGql1fv\nnltKLwR7BzH6vMUQnOrcpm4d+Exicyb8e9+E2pW5envmLsQTIfKoObYsNJchKX5k\nWS0QkkDE1kjCXeacdmYfd8fowwKBgQDsKjrihN+ZshiZQ9DorcQWH+n+k/GGDomD\nit6URlqDljyBSJ5zJXdFh/AG+NZxhgXEQVIyDr8IUnCt4iR60jsp5n7G6SRcHhRx\nTR5qgzPp0aLP7liCn/YwdFXCy8bQs1zsCW/AgZ9mKMg2vqpMeCrEGMEdTwpRsrCt\ngoHg19ZGGwKBgQD1KcEoML/nvYdU5R/QF21ru8EAlHxF74wAyBDcRHOfHwAfzWdc\n0iMNmGuHYUb1nR7VWeoA7jv7QXx1BRxuwq8rxQjCqDvnvIdxggZHi18u0+h7LaEM\nz0n+PyTYq4yl1vcIifcR+ehqDJiKuD4p5FG8HTFS2xASu0hgwEzzMSoujQKBgQCE\nnR4dzuFEjBZ2EffAgLsIdXlPJEJOteEQRa3A81SmaXmmW2HmZNZ56+Cj+Z1peAnK\n76c5RsCM6sYtTjyP33eriqwMBCUPuTBfgx+eTfibxsU3H68CAtMa2GjEDuugi+eU\n/6OKJP+ePS5YV26HrD7PiNsAGz8/Kyk89Xj7ChhfmwKBgEh2HnjeSI5BB3RctwIC\nQKGGkXvdRG01AcFc/fTLZpM/QML9QkC1pRVx7+7cE73+ZAyosYbkbvmVbuJ4rww1\n+useY/L2vM/tEvcHnQcBJuc3nNDKOFiRM3GrFsh/WFiLNyQOLiYzVtWejQ3n1joV\nhQ/oMeDPoPPBe7K7wGXJZ93h\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-n3a6m@stamina-frontend.iam.gserviceaccount.com",
+  "client_id": "103635559207163674486",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-n3a6m%40stamina-frontend.iam.gserviceaccount.com"
+}

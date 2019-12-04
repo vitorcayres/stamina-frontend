@@ -1,0 +1,462 @@
+[debug] [2019-12-03T19:23:15.008Z] ----------------------------------------------------------------------
+[debug] [2019-12-03T19:23:15.054Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\vitor.cayres\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only functions
+[debug] [2019-12-03T19:23:15.055Z] CLI Version:   7.5.0
+[debug] [2019-12-03T19:23:15.055Z] Platform:      win32
+[debug] [2019-12-03T19:23:15.055Z] Node Version:  v10.16.3
+[debug] [2019-12-03T19:23:15.056Z] Time:          Tue Dec 03 2019 17:23:15 GMT-0200 (GMT-02:00)
+[debug] [2019-12-03T19:23:15.056Z] ----------------------------------------------------------------------
+[debug] 
+[info] i  Starting emulators: ["functions"]
+[warn] !  Your requested "node" version "8" doesn't match your global version "10"
+[info] +  functions: Emulator started at http://localhost:5001
+[info] i  functions: Watching "C:\xampp\htdocs\stamina-frontend\functions" for Cloud Functions...
+[debug] [2019-12-03T19:23:18.437Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:23:18.438Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:23:18.444Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:23:18.448Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:23:19.036Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:23:19.037Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:23:19.121Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:23:19.122Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:23:19.124Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:23:19.205Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:23:19.517Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  Error: The default Firebase app already exists. This means you called initializeApp() more than once without providing an app name as the second argument. In most cases you only need to call initializeApp() once. But if you do want to initialize multiple apps, pass a second argument to initializeApp() to give each app a unique name.
+    at FirebaseAppError.FirebaseError [as constructor] (C:\xampp\htdocs\stamina-frontend\functions\node_modules\firebase-admin\lib\utils\error.js:42:28)
+    at FirebaseAppError.PrefixedFirebaseError [as constructor] (C:\xampp\htdocs\stamina-frontend\functions\node_modules\firebase-admin\lib\utils\error.js:88:28)
+    at new FirebaseAppError (C:\xampp\htdocs\stamina-frontend\functions\node_modules\firebase-admin\lib\utils\error.js:123:28)
+    at FirebaseNamespaceInternals.initializeApp (C:\xampp\htdocs\stamina-frontend\functions\node_modules\firebase-admin\lib\firebase-namespace.js:68:23)
+    at FirebaseNamespace.initializeApp (C:\xampp\htdocs\stamina-frontend\functions\node_modules\firebase-admin\lib\firebase-namespace.js:408:30)
+    at Proxy.<anonymous> (C:\Users\vitor.cayres\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:342:72)
+    at Object.<anonymous> (C:\xampp\htdocs\stamina-frontend\functions\services\Users\index.js:4:7)
+    at Module._compile (internal/modules/cjs/loader.js:778:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2019-12-03T19:23:56.269Z] File C:\xampp\htdocs\stamina-frontend\functions\index.js changed, reloading triggers
+[debug] [2019-12-03T19:23:58.306Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:23:58.306Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:23:58.320Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:23:58.327Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:23:58.980Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:23:58.981Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:23:59.061Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:23:59.062Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:23:59.064Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:23:59.144Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:23:59.463Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[debug] [2019-12-03T19:24:10.077Z] Accepted request GET /stamina-frontend/us-central1/users/list --> users
+[debug] [2019-12-03T19:24:11.175Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[info] i  functions: Beginning execution of "users"
+[debug] [2019-12-03T19:24:11.176Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:24:11.187Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:24:11.191Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:24:11.727Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:24:11.727Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:24:11.816Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:24:11.818Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:24:11.821Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:24:11.899Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:24:12.229Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[warn] !  functions: Could not find trigger "users" in your functions directory.
+[warn] !  Your function was killed because it raised an unhandled error.
+[debug] [2019-12-03T19:24:41.638Z] File C:\xampp\htdocs\stamina-frontend\functions\services\Users\index.js changed, reloading triggers
+[debug] [2019-12-03T19:24:44.141Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:24:44.141Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:24:44.156Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:24:44.166Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:24:45.083Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:24:45.084Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:24:45.238Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:24:45.240Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:24:45.243Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:24:45.369Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:24:45.888Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[debug] [2019-12-03T19:26:16.166Z] File C:\xampp\htdocs\stamina-frontend\functions\services\Users\index.js changed, reloading triggers
+[debug] [2019-12-03T19:26:18.146Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:26:18.146Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:26:18.156Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:26:18.160Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:26:18.892Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:26:18.893Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:26:18.983Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:26:18.985Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:26:18.987Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:26:19.068Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:26:19.502Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[debug] [2019-12-03T19:26:48.003Z] File C:\xampp\htdocs\stamina-frontend\functions\services\Users\index.js changed, reloading triggers
+[debug] [2019-12-03T19:26:49.954Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:26:49.954Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:26:49.964Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:26:49.969Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:26:50.779Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:26:50.780Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:26:50.866Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:26:50.867Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:26:50.869Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:26:50.962Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:26:51.408Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[debug] [2019-12-03T19:29:03.305Z] Accepted request GET /stamina-frontend/us-central1/users/list --> users
+[debug] [2019-12-03T19:29:04.401Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[info] i  functions: Beginning execution of "users"
+[debug] [2019-12-03T19:29:04.407Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:29:04.410Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:29:04.413Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:29:05.481Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:29:05.482Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:29:05.569Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:29:05.570Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:29:05.572Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:29:05.644Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:29:05.934Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[warn] !  functions: Could not find trigger "users" in your functions directory.
+[warn] !  Your function was killed because it raised an unhandled error.
+[debug] [2019-12-03T19:29:23.149Z] File C:\xampp\htdocs\stamina-frontend\functions\services\Users\index.js changed, reloading triggers
+[debug] [2019-12-03T19:29:25.098Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:29:25.099Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:29:25.109Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:29:25.116Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:29:25.991Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:29:25.991Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:29:26.072Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:29:26.073Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:29:26.074Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:29:26.147Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:29:26.494Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[debug] [2019-12-03T19:29:27.492Z] Accepted request GET /stamina-frontend/us-central1/users/list --> users
+[debug] [2019-12-03T19:29:28.227Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[info] i  functions: Beginning execution of "users"
+[debug] [2019-12-03T19:29:28.229Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:29:28.236Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:29:28.239Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:29:28.960Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:29:28.961Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:29:29.098Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:29:29.102Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:29:29.105Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:29:29.215Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:29:29.642Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[warn] !  functions: Could not find trigger "users" in your functions directory.
+[warn] !  Your function was killed because it raised an unhandled error.
+[debug] [2019-12-03T19:30:29.564Z] File C:\xampp\htdocs\stamina-frontend\functions\services\Users\index.js changed, reloading triggers
+[debug] [2019-12-03T19:30:31.512Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:30:31.513Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:30:31.524Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:30:31.529Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:30:32.574Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:30:32.574Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:30:32.717Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:30:32.719Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:30:32.721Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:30:32.798Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:30:33.101Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[debug] [2019-12-03T19:34:06.402Z] File C:\xampp\htdocs\stamina-frontend\functions\services\Users\index copy.js changed, reloading triggers
+[debug] [2019-12-03T19:34:11.020Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:34:11.020Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:34:11.021Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:34:11.021Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:34:11.373Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:34:11.373Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:34:11.647Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:34:11.652Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:34:11.655Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:34:11.858Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:34:12.249Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[debug] [2019-12-03T19:36:04.401Z] File C:\xampp\htdocs\stamina-frontend\functions\index.js changed, reloading triggers
+[debug] [2019-12-03T19:36:06.567Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:36:06.567Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:36:06.609Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:36:06.620Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:36:07.429Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:36:07.430Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:36:07.514Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:36:07.516Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:36:07.517Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:36:07.601Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:36:07.875Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[debug] [2019-12-03T19:36:12.083Z] File C:\xampp\htdocs\stamina-frontend\functions\index.js changed, reloading triggers
+[debug] [2019-12-03T19:36:13.661Z] File C:\xampp\htdocs\stamina-frontend\functions\index.js changed, reloading triggers
+[debug] [2019-12-03T19:36:14.905Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:36:14.905Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:36:14.921Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:36:14.925Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:36:15.975Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:36:15.982Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:36:16.159Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:36:16.161Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:36:16.165Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:36:16.305Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:36:16.347Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:36:16.347Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:36:16.353Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:36:16.356Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:36:16.870Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[debug] [2019-12-03T19:36:17.240Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:36:17.240Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:36:17.418Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:36:17.421Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:36:17.424Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:36:17.524Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:36:17.939Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[debug] [2019-12-03T19:36:18.482Z] Accepted request GET /stamina-frontend/us-central1/users/list --> users
+[debug] [2019-12-03T19:36:19.305Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[info] i  functions: Beginning execution of "users"
+[debug] [2019-12-03T19:36:19.307Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:36:19.315Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:36:19.319Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:36:19.941Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:36:19.942Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:36:20.047Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:36:20.050Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:36:20.053Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:36:20.208Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:36:20.820Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[warn] !  functions: Could not find trigger "users" in your functions directory.
+[warn] !  Your function was killed because it raised an unhandled error.
+[debug] [2019-12-03T19:36:34.638Z] File C:\xampp\htdocs\stamina-frontend\functions\index.js changed, reloading triggers
+[debug] [2019-12-03T19:36:37.376Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:36:37.376Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:36:37.401Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:36:37.407Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:36:38.638Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:36:38.638Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:36:38.712Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:36:38.713Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:36:38.715Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:36:38.785Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:36:39.049Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[info] +  functions[users]: http function initialized (http://localhost:5001/stamina-frontend/us-central1/users).
+[debug] [2019-12-03T19:36:59.271Z] File C:\xampp\htdocs\stamina-frontend\functions\index.js changed, reloading triggers
+[debug] [2019-12-03T19:37:01.409Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:37:01.410Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:37:01.419Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:37:01.423Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:37:02.360Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:37:02.361Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:37:02.459Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:37:02.460Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:37:02.461Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:37:02.528Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:37:02.858Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[debug] [2019-12-03T19:39:22.766Z] File C:\xampp\htdocs\stamina-frontend\functions\index.js changed, reloading triggers
+[debug] [2019-12-03T19:39:24.723Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:39:24.723Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:39:24.733Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:39:24.737Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:39:25.519Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:39:25.520Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:39:25.610Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:39:25.611Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:39:25.613Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:39:25.701Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[warn] !  C:\xampp\htdocs\stamina-frontend\functions\index.js:4
+const app = require('./services/Users');
+      ^
+
+SyntaxError: Identifier 'app' has already been declared
+    at Module._compile (internal/modules/cjs/loader.js:723:23)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at C:\Users\vitor.cayres\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:677:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\vitor.cayres\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:4:58)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2019-12-03T19:39:38.474Z] File C:\xampp\htdocs\stamina-frontend\functions\services\Users\index.js changed, reloading triggers
+[debug] [2019-12-03T19:39:40.593Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:39:40.593Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:39:40.602Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:39:40.606Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:39:41.421Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:39:41.422Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:39:41.537Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:39:41.538Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:39:41.540Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:39:41.617Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[warn] !  C:\xampp\htdocs\stamina-frontend\functions\index.js:4
+const app = require('./services/Users');
+      ^
+
+SyntaxError: Identifier 'app' has already been declared
+    at Module._compile (internal/modules/cjs/loader.js:723:23)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:789:10)
+    at Module.load (internal/modules/cjs/loader.js:653:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:593:12)
+    at Function.Module._load (internal/modules/cjs/loader.js:585:3)
+    at Module.require (internal/modules/cjs/loader.js:692:17)
+    at require (internal/modules/cjs/helpers.js:25:18)
+    at C:\Users\vitor.cayres\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:677:33
+    at Generator.next (<anonymous>)
+    at fulfilled (C:\Users\vitor.cayres\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js:4:58)
+[warn] !  We were unable to load your functions code. (see above)
+[debug] [2019-12-03T19:39:42.098Z] File C:\xampp\htdocs\stamina-frontend\functions\index.js changed, reloading triggers
+[debug] [2019-12-03T19:39:43.793Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:39:43.793Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:39:43.801Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:39:43.804Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:39:44.378Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:39:44.379Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:39:44.460Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:39:44.462Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:39:44.464Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:39:44.544Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:39:44.957Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
+[debug] [2019-12-03T19:41:30.138Z] File C:\xampp\htdocs\stamina-frontend\functions\services\Users\index.js changed, reloading triggers
+[debug] [2019-12-03T19:41:32.659Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:41:32.659Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:41:32.676Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:41:32.681Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:41:33.330Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:41:33.330Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:41:33.418Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:41:33.419Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:41:33.421Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:41:33.495Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:44:30.509Z] File C:\xampp\htdocs\stamina-frontend\functions\services\Users\index.js changed, reloading triggers
+[debug] [2019-12-03T19:44:32.826Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:44:32.827Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:44:32.836Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:44:32.840Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:44:33.369Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:44:33.369Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:44:33.607Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:44:33.608Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:44:33.612Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:44:33.702Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:44:46.486Z] File C:\xampp\htdocs\stamina-frontend\functions\index.js changed, reloading triggers
+[debug] [2019-12-03T19:44:48.369Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:44:48.369Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:44:48.378Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:44:48.382Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:44:48.935Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:44:48.935Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:44:49.013Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:44:49.014Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:44:49.016Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:44:49.079Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:44:58.528Z] Accepted request GET /stamina-frontend/us-central1/users/list --> users
+[debug] [2019-12-03T19:44:59.195Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[info] i  functions: Beginning execution of "users"
+[debug] [2019-12-03T19:44:59.196Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:44:59.203Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:44:59.207Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:44:59.794Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:44:59.795Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:45:00.062Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:45:00.069Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:45:00.083Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:45:00.185Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[warn] !  functions: Could not find trigger "users" in your functions directory.
+[warn] !  Your function was killed because it raised an unhandled error.
+[debug] [2019-12-03T19:45:08.245Z] Accepted request GET /stamina-frontend/us-central1/users --> users
+[debug] [2019-12-03T19:45:08.962Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[info] i  functions: Beginning execution of "users"
+[debug] [2019-12-03T19:45:08.964Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:45:08.970Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:45:08.974Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:45:09.585Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:45:09.585Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:45:09.663Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:45:09.664Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:45:09.666Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:45:09.743Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[warn] !  functions: Could not find trigger "users" in your functions directory.
+[warn] !  Your function was killed because it raised an unhandled error.
+[debug] [2019-12-03T19:45:56.240Z] File C:\xampp\htdocs\stamina-frontend\functions\services\Users\index.js changed, reloading triggers
+[debug] [2019-12-03T19:45:58.149Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:45:58.149Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:45:58.158Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:45:58.164Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:45:59.023Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:45:59.023Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:45:59.094Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:45:59.097Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:45:59.099Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:45:59.170Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:46:14.280Z] File C:\xampp\htdocs\stamina-frontend\functions\index.js changed, reloading triggers
+[debug] [2019-12-03T19:46:16.490Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:46:16.490Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:46:16.501Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:46:16.505Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:46:17.211Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:46:17.211Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:46:17.297Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:46:17.298Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:46:17.301Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:46:17.415Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:46:18.083Z] Accepted request GET /stamina-frontend/us-central1/users --> users
+[debug] [2019-12-03T19:46:18.832Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[info] i  functions: Beginning execution of "users"
+[debug] [2019-12-03T19:46:18.834Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:46:18.839Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:46:18.843Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:46:19.365Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:46:19.365Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:46:19.440Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:46:19.442Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:46:19.444Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:46:19.521Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[warn] !  functions: Could not find trigger "users" in your functions directory.
+[warn] !  Your function was killed because it raised an unhandled error.
+[debug] [2019-12-03T19:47:31.705Z] File C:\xampp\htdocs\stamina-frontend\functions\index.js changed, reloading triggers
+[debug] [2019-12-03T19:47:33.870Z] [runtime-status] Functions runtime initialized. {"cwd":"C:\\xampp\\htdocs\\stamina-frontend\\functions","node_version":"10.16.3"}
+[debug] [2019-12-03T19:47:33.870Z] [runtime-status] Disabled runtime features: undefined {}
+[debug] [2019-12-03T19:47:33.880Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:47:33.884Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[warn] !  functions: Your GOOGLE_APPLICATION_CREDENTIALS environment variable points to C:/xampp/htdocs/stamina-frontend/functions/stamina-frontend-df3b1e859b66.json. Non-emulated services will access production using these credentials. Be careful!
+[debug] [2019-12-03T19:47:35.043Z] [runtime-status] Found google-gax at C:\xampp\htdocs\stamina-frontend\functions\node_modules\google-gax\build\src\index.js {}
+[debug] [2019-12-03T19:47:35.044Z] [runtime-status] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"},{"name":"google-gax","status":"mocked"}]
+[debug] [2019-12-03T19:47:35.275Z] [runtime-status] Checked functions.config() {"config":{}}
+[debug] [2019-12-03T19:47:35.277Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.3.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-12-03T19:47:35.286Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-12-03T19:47:35.438Z] [runtime-status] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"8.8.0","resolution":"C:\\xampp\\htdocs\\stamina-frontend\\functions\\node_modules\\firebase-admin\\lib\\index.js"}}
+[debug] [2019-12-03T19:47:35.954Z] [runtime-status] initializeApp(DEFAULT) {"databaseURL":"https://stamina-frontend.firebaseio.com","storageBucket":"stamina-frontend.appspot.com","projectId":"stamina-frontend"}
+[warn] !  functions: The Cloud Firestore emulator is not running, so calls to Firestore will affect production.
