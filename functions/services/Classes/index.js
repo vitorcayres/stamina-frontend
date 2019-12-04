@@ -16,6 +16,7 @@ const listClasses = app.get('/', async (request, response) => {
                     name: doc.data().name,
                     personal_name: doc.data().personal_name,
                     description: doc.data().description,
+                    image: doc.data().image,
                     link: doc.data().link,                  
                     created_at: doc.data().created_at,
                     updated_at: doc.data().update_at
@@ -38,6 +39,7 @@ const addClasses = app.post('/', async (request, response) => {
             name: request.body.name,
             personal_name: request.body.personal_name,
             description: request.body.description,
+            image: request.body.image,
             link: request.body.link,
             created_at: new Date().toISOString(),
             updated_at: new Date().toISOString()
@@ -67,6 +69,7 @@ const updateClasses = app.put('/:id', async (request, response) => {
             name: request.body.name,
             personal_name: request.body.personal_name,
             description: request.body.description,
+            image: request.body.image,
             link: request.body.link,
             updated_at: new Date().toISOString()
         };
