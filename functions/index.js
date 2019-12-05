@@ -24,6 +24,13 @@ const {
     deleteClasses 
 } = require('./services/Classes');
 
+const { 
+    listClassesByLevel, 
+    addClassesByLevel, 
+    updateClassesByLevel, 
+    deleteClassesByLevel 
+} = require('./services/ClassesByLevel');
+
 /** HTTP Cloud Functions Users */
 const usersList = functions.https.onRequest(listUser);
 const usersAdd = functions.https.onRequest(addUser);
@@ -42,6 +49,12 @@ const classesAdd = functions.https.onRequest(addClasses);
 const classesUpdate = functions.https.onRequest(updateClasses);
 const classesDelete = functions.https.onRequest(deleteClasses);
 
+/** HTTP Cloud Functions Classes */
+const classesByLevelList = functions.https.onRequest(listClassesByLevel);
+const classesByLevelAdd = functions.https.onRequest(addClassesByLevel);
+const classesByLevelUpdate = functions.https.onRequest(updateClassesByLevel);
+const classesByLevelDelete = functions.https.onRequest(deleteClassesByLevel);
+
 module.exports = {
     usersList,
     usersAdd,
@@ -54,5 +67,9 @@ module.exports = {
     classesList,
     classesAdd,
     classesUpdate,
-    classesDelete    
+    classesDelete,
+    classesByLevelList,
+    classesByLevelAdd,
+    classesByLevelUpdate,
+    classesByLevelDelete    
 };
