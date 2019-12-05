@@ -55,6 +55,11 @@ const classesByLevelAdd = functions.https.onRequest(addClassesByLevel);
 const classesByLevelUpdate = functions.https.onRequest(updateClassesByLevel);
 const classesByLevelDelete = functions.https.onRequest(deleteClassesByLevel);
 
+const teste = functions.https.onRequest((req, res) => {
+    console.log('REQ', JSON.stringify(req.params));
+    res.send('ok');
+});
+
 module.exports = {
     usersList,
     usersAdd,
@@ -71,5 +76,6 @@ module.exports = {
     classesByLevelList,
     classesByLevelAdd,
     classesByLevelUpdate,
-    classesByLevelDelete    
+    classesByLevelDelete,
+    teste    
 };
