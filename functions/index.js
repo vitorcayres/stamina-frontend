@@ -31,6 +31,10 @@ const {
     deleteClassesByLevel 
 } = require('./services/ClassesByLevel');
 
+const { 
+    processaPagamento 
+} = require('./services/Payment');
+
 /** HTTP Cloud Functions Users */
 const usersList = functions.https.onRequest(listUser);
 const usersAdd = functions.https.onRequest(addUser);
@@ -55,10 +59,7 @@ const classesByLevelAdd = functions.https.onRequest(addClassesByLevel);
 const classesByLevelUpdate = functions.https.onRequest(updateClassesByLevel);
 const classesByLevelDelete = functions.https.onRequest(deleteClassesByLevel);
 
-const teste = functions.https.onRequest((req, res) => {
-    console.log('REQ', JSON.stringify(req.params));
-    res.send('ok');
-});
+const processarPagamento = functions.https.onRequest(processaPagamento);
 
 module.exports = {
     usersList,
@@ -77,5 +78,5 @@ module.exports = {
     classesByLevelAdd,
     classesByLevelUpdate,
     classesByLevelDelete,
-    teste    
+    processarPagamento    
 };
