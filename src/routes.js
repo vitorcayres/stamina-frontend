@@ -5,6 +5,8 @@ import Home from './pages/Home'
 import Dashboard from './pages/Dashboard'
 import MyClasses from './pages/MyClasses'
 import Classes from './pages/Classes'
+import Authentication from './pages/Authentication'
+import Payment from './pages/Payment'
 import Page404 from './pages/Page404'
 
 export default () => (
@@ -14,6 +16,10 @@ export default () => (
             <Route path="/dashboard" exact={true} component={Dashboard} /> 
             <Route path="/my-classes" exact={true} component={MyClasses} />
             <Route path="/classes" exact={true} component={Classes} />
+            <Route path="/authentication" exact={true} component={Authentication} />
+            <Route path="/payment" exact={true} component={Payment} />                        
+            <Route path="/payment-successfull" exact={true} component={Payment} />                        
+
             <Route path='*' exact={true} component={Page404} />
         </Switch>
     </ BrowserRouter>

@@ -1,6 +1,7 @@
 import React from 'react'
 import firebase from 'firebase/app'
 import 'firebase/auth'
+import './styles.css'
 
 const firebaseConfig = {
     apiKey: "AIzaSyAkx7qZGIo8PWyGVIAM7aLfdhOimxDeZcs",
@@ -31,10 +32,9 @@ export default class Auth extends React.Component {
     componentDidMount() {
         this.unsubscribe = firebase.auth().onAuthStateChanged((user) => {
             if (user) {
-                this.setState({ user: user.toJSON() });
+                window.location = '/dashboard';
             } else {
                 window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier("recaptcha-container", { size: "invisible" });
-
                 this.setState({
                     user: null,
                     message: '',
@@ -46,26 +46,38 @@ export default class Auth extends React.Component {
         });
     }
 
+    componentWillUnmount() {
+        if (this.unsubscribe) this.unsubscribe();
+    }
+
     signIn = () => {
         const { phoneNumber } = this.state;
-        this.setState({ message: 'Sending code ...' });
+        this.setState({ message: true });
         const appVerifier = window.recaptchaVerifier;
 
         firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
-            .then(confirmResult => this.setState({ confirmResult, message: 'Code has been sent!' }))
-            .catch(error => this.setState({ message: `Sign In With Phone Number Error: ${error.message}` }));
+            .then(confirmResult => this.setState({ confirmResult, message: false }))
+            .catch(function (error) {
+                console.log(`Sign In With Phone Number Error: ${error.message}`);
+                this.setState({ message: false })                
+            });
     };
 
     confirmCode = () => {
         const { codeInput, confirmResult } = this.state;
 
+        this.setState({ message: true });
+
         if (confirmResult && codeInput.length) {
             confirmResult.confirm(codeInput)
                 .then((user) => {
-                    console.log(user)
-                    this.setState({ message: 'Code Confirmed!' });
+                    window.location = '/dashboard';
+                    this.setState({ message: false });
                 })
-                .catch(error => this.setState({ message: `Code Confirm Error: ${error.message}` }));
+                .catch(function (error) {
+                    console.log(`Code Confirm Error: ${error.message}`);
+                    this.setState({ message: false })                
+                });
         }
     };
 
@@ -78,9 +90,9 @@ export default class Auth extends React.Component {
 
         return (
             <div className="modal-body">
-                <h5 className="text-center"><strong>Entrar no STAMINA</strong></h5>
-                <p style={{ fontSize: '14px' }} className="text-center">Informe seu número de telefone</p>
-
+                <div className="site-logo" style={{ color: '#000' }}>Stamina<span style={{ color: '#f23a2e' }}>.</span></div>
+                <h5 className="pt-4"><strong>Login</strong></h5>
+                <p style={{ fontSize: '14px' }} className="text-center">Informe seu número de telefone:</p>
                 <form method="post" data-aos="fade">
                     <div className="form-group row">
                         <div className="col-md-12">
@@ -94,8 +106,9 @@ export default class Auth extends React.Component {
                         </div>
                     </div>
                     <div className="form-group row">
-                        <div className="col-md-12">
-                            <button type="button" id="recaptcha-container" onClick={this.signIn} className="btn btn-primary py-3 px-5 btn-block">ENTRAR</button>
+                        <div className="col-md-6 offset-md-6">
+                            <div id="recaptcha-container" style={{ display: 'none' }} />
+                            <button type="button" onClick={this.signIn} className="btn btn-primary py-3 px-5 btn-block">PRÓXIMA</button>
                         </div>
                     </div>
                 </form>
@@ -106,10 +119,12 @@ export default class Auth extends React.Component {
     renderMessage() {
         const { message } = this.state;
 
-        if (!message.length) return null;
+        if (!message) return null;
 
         return (
-            <p style={{ padding: 5, backgroundColor: '#000', color: '#fff' }}>{message}</p>
+            <div className="progress">
+                <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow={100} aria-valuemin={0} aria-valuemax={100} style={{ width: '100%' }} />
+            </div>
         );
     }
 
@@ -118,8 +133,9 @@ export default class Auth extends React.Component {
 
         return (
             <div className="modal-body">
-                <h5 className="text-center"><strong>Insira seu código</strong></h5>
-                <p style={{ fontSize: '14px' }} className="text-center">Informe o codigo enviado para seu telefone</p>
+                <div className="site-logo" style={{ color: '#000' }}>Stamina<span style={{ color: '#f23a2e' }}>.</span></div>
+                <h5 className="pt-4"><strong>Insira seu código</strong></h5>
+                <p style={{ fontSize: '14px' }} className="text-center">Para continuarmos, insira o código enviado a você:</p>
                 <form method="post" data-aos="fade">
                     <div className="form-group row">
                         <div className="col-md-12">
@@ -133,8 +149,9 @@ export default class Auth extends React.Component {
                         </div>
                     </div>
                     <div className="form-group row">
-                        <div className="col-md-12">
-                            <button type="button" onClick={this.confirmCode} className="btn btn-primary py-3 px-5 btn-block">CONTINUAR</button>
+                        <div className="col-md-6 offset-md-6">
+                            <div id="recaptcha-container" style={{ display: 'none' }} />
+                            <button type="button" onClick={this.confirmCode} className="btn btn-primary py-3 px-5 btn-block">PRÓXIMA</button>
                         </div>
                     </div>
                 </form>
@@ -142,44 +159,24 @@ export default class Auth extends React.Component {
         );
     }
 
-
     render() {
         const { user, confirmResult } = this.state;
 
         return (
-            <>
-
-                <button type="button" className="btn btn-outline-primary" data-toggle="modal" data-target="#modalExemplo">
-                    MINHA CONTA
-</button>
-                <div className="modal fade" id="modalExemplo" tabIndex={-1} role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div className="modal-dialog modal-sm" role="document">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h6 className="modal-title">Login</h6>
-                                <button type="button" className="close" data-dismiss="modal" aria-label="Fechar">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-
-                            {!user && !confirmResult && this.renderPhoneNumberInput()}
-
-                            {!user && confirmResult && this.renderVerificationCodeInput()}
-
-                            {this.renderMessage()}
-
-                            {user && (
-                                <div>
-                                    <p style={{ fontSize: 25 }}>Signed In!</p>
-                                    <p>{JSON.stringify(user)}</p>
-                                    <button type="button" id="recaptcha-container" onClick={this.signOut}>Sign Out</button>
-                                </div>
-                            )}
-
-                        </div>
-                    </div>
+            <section className="content-signin">
+                <div className="form-signin">
+                    {!user && !confirmResult && this.renderPhoneNumberInput()}
+                    {!user && confirmResult && this.renderVerificationCodeInput()}
+                    {/* {user && (
+                        <>
+                            <p style={{ fontSize: 25 }}>Logado!</p>
+                            <div id="recaptcha-container" style={{ display: 'none' }} />
+                            <button type="button" className="btn btn-primary py-3 px-5 btn-block" onClick={this.signOut}>SAIR</button>
+                        </>
+                    )} */}
+                    {this.renderMessage()}
                 </div>
-            </>
+            </section>
         );
     }
 }

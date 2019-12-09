@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import ModalLogin from '../Modal/Login'
-
 export default () => {
     return (
         <React.Fragment>
@@ -27,7 +25,7 @@ export default () => {
                                     <li><a href="#trainer-section" className="nav-link">Trainners</a></li>
                                     {/* <li><a href="#services-section" class="nav-link">Services</a></li> */}
                                     <li><a href="#contact-section" className="nav-link">Contato</a></li>
-                                    <li><ModalLogin /></li>
+                                    <li><Link to="/authentication" className="nav-link">Minha Conta</Link></li>
                                 </ul>
                             </nav>
                             <a href="/#" className="d-inline-block d-lg-none site-menu-toggle js-menu-toggle float-right"><span className="icon-menu h3" /></a>
