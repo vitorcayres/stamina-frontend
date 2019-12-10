@@ -20,12 +20,14 @@ export default class Register extends React.Component {
             rg: null,
             payment: null,
             loading: false,
-            displayFormRegister: 'block',
-            displayFormPayment: 'none',            
+            displayFormRegister: 'none',
+            displayFormPayment: 'none',
+            displaySuccessPayment: 'block'
         }
 
         this.handleChangeFormRegister = this.handleChangeFormRegister.bind(this);
         this.handleSubmitFormRegister = this.handleSubmitFormRegister.bind(this);
+        this.handleOnSuccessPayment = this.handleOnSuccessPayment.bind(this);
     }
 
     handleChangeFormRegister(e) {
@@ -33,37 +35,61 @@ export default class Register extends React.Component {
     }
 
     handleSubmitFormRegister(e) {
-        console.log(this.state)
+        console.log('info user', this.state)
 
         this.setState({ loading: true });
 
         setTimeout(() => {
-            this.setState({ 
+            this.setState({
                 loading: false,
                 displayFormRegister: 'none',
-                displayFormPayment: 'block'                
-             });
-         }, 2000);
+                displayFormPayment: 'block'
+            });
+        }, 2000);
 
         e.preventDefault();
+    }
+
+    handleOnSuccessPayment(data) {
+
+        this.setState({
+            loading: false,
+            displayFormPayment: 'none',
+            displaySuccessPayment: 'block'
+        });
+
+        console.log('success payment', data)
     }
 
     render() {
         return (
             <>
-            <Loading status={this.state.loading} />
-            <div className="site-section bg-light contact-wrap">
+                <Loading status={this.state.loading} />
+
                 <FormRegister
                     display={this.state.displayFormRegister}
                     handleChange={this.handleChangeFormRegister}
                     handleSubmit={this.handleSubmitFormRegister}
                 />
+
                 <FormPayment
                     display={this.state.displayFormPayment}
                     handleChange={this.handleChangeFormRegister}
                     handleSubmit={this.handleSubmitFormRegister}
+                    handleOnSuccessPayment={(data) => this.handleOnSuccessPayment(data)}
                 />
-            </div>
+
+                <div className="container" style={{ display: this.state.displaySuccessPayment }}>
+                    <div className="py-5 text-center">
+                        <div className="site-logo mb-3" style={{ color: '#000' }}>Stamina<span style={{ color: '#f23a2e' }}>.</span></div>
+                        <h2>Parabéns!</h2>
+                        <p className="lead">Você acaba de adquirir o Plano Premium! </p>
+                    </div>
+                </div>
+
+                <footer className="my-5 pt-5 text-muted text-center text-small">
+                    <p className="mb-1">© 2019 Stamina - Todos os direitos reservados.</p>
+                </footer>
             </>
         );
     }

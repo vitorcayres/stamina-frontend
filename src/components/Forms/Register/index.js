@@ -3,17 +3,37 @@ import React from 'react'
 export default (props) => {
     return (
         <div className="container" style={{ display: props.display }}>
-            <div className="row justify-content-center text-center mb-5">
-                <div className="col-md-8 section-heading">
-                    <h2 className="heading mb-3">Cadastro</h2>
-                    <p>Para seguirmos, precisamos que você forneça suas informações no nosso formulario de cadastro:</p>
-                </div>
+            <div className="py-5 text-center">
+                <div className="site-logo mb-3" style={{ color: '#000' }}>Stamina<span style={{ color: '#f23a2e' }}>.</span></div>
+                <h2>Formulário de Cadastro</h2>
+                <p className="lead">Para seguirmos, precisamos que você forneça suas informações no nosso formulario de cadastro:</p>
             </div>
-            <div className="row justify-content-center">
-                <div className="col-md-8">
+            <div className="row">
+                <div className="col-md-4 order-md-2 mb-4">
+                    <h4 className="d-flex justify-content-between align-items-center mb-3">
+                        <span className="text-muted">Seu carrinho</span>
+                        <span className="badge badge-secondary badge-pill">1</span>
+                    </h4>
+                    <ul className="list-group mb-3">
+                        <li className="list-group-item d-flex justify-content-between bg-light">
+                            <div className="text-success">
+                                <h6 className="my-0">Plano Premium</h6>
+                                <small>3 niveis de aula</small>
+                            </div>
+                            <span className="text-success">R$ 100,00 / ano</span>
+                        </li>
+                        <li className="list-group-item d-flex justify-content-between">
+                            <span>Total</span>
+                            <strong>R$ 100,00</strong>
+                        </li>
+                    </ul>
+                </div>
+                <div className="col-md-8 order-md-1">
+                    <h4 className="mb-3">Dados Cadastrais</h4>
                     <form data-aos="fade" onSubmit={props.handleSubmit}>
                         <div className="form-group row">
                             <div className="col-md-6 mb-3 mb-lg-0">
+                                <label htmlFor="">Nome</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -24,6 +44,7 @@ export default (props) => {
                                     required />
                             </div>
                             <div className="col-md-6">
+                                <label htmlFor="">Sobrenome</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -36,6 +57,7 @@ export default (props) => {
                         </div>
                         <div className="form-group row">
                             <div className="col-md-12">
+                                <label htmlFor="">Endereço</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -48,6 +70,7 @@ export default (props) => {
                         </div>
                         <div className="form-group row">
                             <div className="col-md-4 mb-3 mb-lg-0">
+                                <label htmlFor="">CEP</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -58,6 +81,7 @@ export default (props) => {
                                     required />
                             </div>
                             <div className="col-md-4 mb-3 mb-lg-0">
+                                <label htmlFor="">Cidade</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -68,6 +92,7 @@ export default (props) => {
                                     required />
                             </div>
                             <div className="col-md-4">
+                                <label htmlFor="">Estado</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -80,6 +105,7 @@ export default (props) => {
                         </div>
                         <div className="form-group row">
                             <div className="col-md-6 mb-3 mb-lg-0">
+                                <label htmlFor="">RG</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -90,6 +116,7 @@ export default (props) => {
                                     required />
                             </div>
                             <div className="col-md-6">
+                                <label htmlFor="">CPF</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -102,6 +129,7 @@ export default (props) => {
                         </div>
                         <div className="form-group row">
                             <div className="col-md-6 mb-3 mb-lg-0">
+                                <label htmlFor="">Telefone</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -112,6 +140,7 @@ export default (props) => {
                                     required />
                             </div>
                             <div className="col-md-6">
+                                <label htmlFor="">Celular</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -122,9 +151,10 @@ export default (props) => {
                                     required />
                             </div>
                         </div>
+                        <hr className="mb-4"></hr>
                         <div className="form-group row">
                             <div className="col-md-12">
-                                <button type="submit" className="btn btn-primary py-3 px-5 btn-block">PRÓXIMA</button>
+                                <button type="submit" className="btn btn-primary py-3 px-5 btn-block">CADASTRAR</button>
                             </div>
                         </div>
                     </form>
