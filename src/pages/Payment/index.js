@@ -1,10 +1,10 @@
 import React from 'react'
-// import { PayPalButton } from 'react-paypal-button-v2'
+import FormRegister from '../../components/Forms/Register'
 import FormPayment from '../../components/Forms/Payment'
 
-export default class Payment extends React.Component {
+export default class Register extends React.Component {
 
-    constructor(){
+    constructor() {
         super();
 
         this.state = {
@@ -17,41 +17,43 @@ export default class Payment extends React.Component {
             phone: null,
             cpf: null,
             rg: null,
-            payment: null
+            payment: null,
+            displayFormRegister: 'block',
+            displayFormPayment: 'none',            
         }
 
-        this.handleChangeFormPayment = this.handleChangeFormPayment.bind(this);
-        this.handleSubmitFormPayment = this.handleSubmitFormPayment.bind(this);
+        this.handleChangeFormRegister = this.handleChangeFormRegister.bind(this);
+        this.handleSubmitFormRegister = this.handleSubmitFormRegister.bind(this);
     }
 
-    handleChangeFormPayment(e) {
+    handleChangeFormRegister(e) {
         this.setState({ [e.target.name]: e.target.value });
     }
 
-    handleSubmitFormPayment(e) {
+    handleSubmitFormRegister(e) {
         console.log(this.state)
+
+        this.setState({ 
+            displayFormRegister: 'none',
+            displayFormPayment: 'block'
+        });
+
         e.preventDefault();
-    }    
+    }
 
     render() {
         return (
             <div className="site-section bg-light contact-wrap">
-                <div className="container">
-                    <div className="row justify-content-center text-center mb-5">
-                        <div className="col-md-8 section-heading">
-                            <h2 className="heading mb-3">Formulario</h2>
-                            <p>Para seguirmos, precisamos que você forneça suas informações no nosso formulario de cadastro:</p>
-                        </div>
-                    </div>
-                    <div className="row justify-content-center">
-                        <div className="col-md-8">
-                            <FormPayment 
-                                handleChange={this.handleChangeFormPayment}
-                                handleSubmit={this.handleSubmitFormPayment}                            
-                            />
-                        </div>
-                    </div>
-                </div>
+                <FormRegister
+                    display={this.state.displayFormRegister}
+                    handleChange={this.handleChangeFormRegister}
+                    handleSubmit={this.handleSubmitFormRegister}
+                />
+                <FormPayment
+                    display={this.state.displayFormPayment}
+                    handleChange={this.handleChangeFormRegister}
+                    handleSubmit={this.handleSubmitFormRegister}
+                />
             </div>
         );
     }
