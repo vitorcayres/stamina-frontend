@@ -20,9 +20,9 @@ export default class Register extends React.Component {
             rg: null,
             payment: null,
             loading: false,
-            displayFormRegister: 'none',
+            displayFormRegister: 'block',
             displayFormPayment: 'none',
-            displaySuccessPayment: 'block'
+            displaySuccessPayment: 'none'
         }
 
         this.handleChangeFormRegister = this.handleChangeFormRegister.bind(this);
