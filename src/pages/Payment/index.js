@@ -1,6 +1,7 @@
 import React from 'react'
 import FormRegister from '../../components/Forms/Register'
 import FormPayment from '../../components/Forms/Payment'
+import Loading from '../../components/Loading'
 
 export default class Register extends React.Component {
 
@@ -18,6 +19,7 @@ export default class Register extends React.Component {
             cpf: null,
             rg: null,
             payment: null,
+            loading: false,
             displayFormRegister: 'block',
             displayFormPayment: 'none',            
         }
@@ -33,16 +35,23 @@ export default class Register extends React.Component {
     handleSubmitFormRegister(e) {
         console.log(this.state)
 
-        this.setState({ 
-            displayFormRegister: 'none',
-            displayFormPayment: 'block'
-        });
+        this.setState({ loading: true });
+
+        setTimeout(() => {
+            this.setState({ 
+                loading: false,
+                displayFormRegister: 'none',
+                displayFormPayment: 'block'                
+             });
+         }, 2000);
 
         e.preventDefault();
     }
 
     render() {
         return (
+            <>
+            <Loading status={this.state.loading} />
             <div className="site-section bg-light contact-wrap">
                 <FormRegister
                     display={this.state.displayFormRegister}
@@ -55,6 +64,7 @@ export default class Register extends React.Component {
                     handleSubmit={this.handleSubmitFormRegister}
                 />
             </div>
+            </>
         );
     }
 }
