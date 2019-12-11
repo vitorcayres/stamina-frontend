@@ -1,6 +1,8 @@
 const admin = require('firebase-admin');
-const app = require('express')();
 const db = admin.firestore().collection('users');
+const app = require('express')();
+const cors = require('cors');
+app.use(cors({ origin: true }));
 
 /**
  * List user
@@ -39,6 +41,7 @@ const listUser = app.get('/', async (request, response) => {
 const addUser = app.post('/', async (request, response) => {
     try {
         const data = {
+            "user": {
             name: request.body.name,
             address: request.body.address,
             city: request.body.city,
@@ -49,7 +52,10 @@ const addUser = app.post('/', async (request, response) => {
             rg: request.body.rg,
             created_at: new Date().toISOString(),
             updated_at: new Date().toISOString()
+        },
+        "payment": request.body.payment
         };
+        
         const usersRef = await db.add(data);
         const users = await usersRef.get();
 

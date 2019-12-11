@@ -33,7 +33,8 @@ export default (props) => {
                                                 shape: 'rect',
                                                 label: 'buynow'
                                             }}
-                                            onSuccess={(data) => props.handleOnSuccessPayment(data)}
+                                            onSuccess={(data) => props.onSuccess(data)}
+                                            onCancel={(data) => props.onCancel(data)} 
                                             options={{
                                                 clientId: "AWsEZXDJ9bmY1hLtL7Z4c_GtLvHV3gmRM41TdlS-u042Cfa7f0ji_Mn-OLTLB8BYS2BsA_qVt6JiVIhZ",
                                                 currency: "BRL"

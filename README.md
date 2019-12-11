@@ -8,6 +8,9 @@ export GOOGLE_APPLICATION_CREDENTIALS=/c/xampp//htdocs/stamina-frontend/function
 Emulator:
 firebase emulators:start --only functions
 
+Deploy:
+firebase deploy --only functions
+
 PAYPAL:
 SANDBOX: https://www.sandbox.paypal.com/
 DEVELOPER PAYPAL: https://developer.paypal.com

@@ -1,7 +1,11 @@
 import React from 'react'
+import axios from 'axios'
+import * as env from '../../constants'
 import FormRegister from '../../components/Forms/Register'
 import FormPayment from '../../components/Forms/Payment'
 import Loading from '../../components/Loading'
+
+const url_backend = env.URL_BACKEND;
 
 export default class Register extends React.Component {
 
@@ -18,7 +22,7 @@ export default class Register extends React.Component {
             phone: null,
             cpf: null,
             rg: null,
-            payment: null,
+            payment: true,
             loading: false,
             displayFormRegister: 'block',
             displayFormPayment: 'none',
@@ -27,7 +31,8 @@ export default class Register extends React.Component {
 
         this.handleChangeFormRegister = this.handleChangeFormRegister.bind(this);
         this.handleSubmitFormRegister = this.handleSubmitFormRegister.bind(this);
-        this.handleOnSuccessPayment = this.handleOnSuccessPayment.bind(this);
+        this.onSuccess = this.onSuccess.bind(this);
+        this.onCancel = this.onCancel.bind(this);
     }
 
     handleChangeFormRegister(e) {
@@ -50,15 +55,64 @@ export default class Register extends React.Component {
         e.preventDefault();
     }
 
-    handleOnSuccessPayment(data) {
+    onSuccess(data) {
 
-        this.setState({
-            loading: false,
-            displayFormPayment: 'none',
-            displaySuccessPayment: 'block'
+        const { 
+            address,
+            city,
+            cpf,
+            landline,
+            lastname,
+            name,
+            payment,
+            phone,
+            rg,
+            state,
+            zip_code
+        } = this.state;
+
+        let body = {
+            "user": {
+                "address": address,
+                "city": city,
+                "cpf": cpf,
+                "landline": landline,
+                "lastname": lastname,
+                "name": name,
+                "payment": payment,
+                "phone": phone,
+                "rg": rg,
+                "state": state,
+                "zip_code": zip_code,                
+            },
+            "payment": data
+        };
+
+        console.log('success payment', body)
+
+        axios.post(url_backend + `/usersAdd`, body).then(response => {
+            console.log('success user', response)
+
+            this.setState({
+                loading: false,
+                displayFormPayment: 'none',
+                displaySuccessPayment: 'block'
+            });
+
+        }).catch(error => {
+            console.log(error);
         });
+    }
 
-        console.log('success payment', data)
+    onCancel(data) {
+
+        // this.setState({
+        //     loading: false,
+        //     displayFormPayment: 'none',
+        //     displaySuccessPayment: 'block'
+        // });
+
+        console.log('cancel payment', data)
     }
 
     render() {
@@ -76,7 +130,8 @@ export default class Register extends React.Component {
                     display={this.state.displayFormPayment}
                     handleChange={this.handleChangeFormRegister}
                     handleSubmit={this.handleSubmitFormRegister}
-                    handleOnSuccessPayment={(data) => this.handleOnSuccessPayment(data)}
+                    onSuccess={(data) => this.onSuccess(data)}
+                    onCancel={(data) => this.onCancel(data)}
                 />
 
                 <div className="container" style={{ display: this.state.displaySuccessPayment }}>
