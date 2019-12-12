@@ -14,17 +14,23 @@ const listUser = app.get('/', async (request, response) => {
         userQuerySnapshot.forEach(
             (doc) => {
                 users.push({
-                    id: doc.id,
-                    name: doc.data().name,
-                    address: doc.data().address,
-                    city: doc.data().city,
-                    zip_code: doc.data().zip_code,
-                    landline: doc.data().landline,
-                    phone: doc.data().phone,
-                    cpf: doc.data().cpf,
-                    rg: doc.data().rg,
-                    created_at: doc.data().created_at,
-                    updated_at: doc.data().update_at
+                    "user": {
+                    id: doc.id,                        
+                    name: doc.data().user.name,
+                    lastname: doc.data().user.lastname,
+                    address: doc.data().user.address,
+                    city: doc.data().user.city,
+                    state: doc.data().user.state,
+                    zip_code: doc.data().user.zip_code,
+                    landline: doc.data().user.landline,
+                    phone: doc.data().user.phone,
+                    cpf: doc.data().user.cpf,
+                    rg: doc.data().user.rg,
+                    payment: doc.data().user.payment,
+                    created_at: doc.data().user.created_at,
+                    updated_at: doc.data().user.update_at
+                },
+                "payment": doc.data().payment
                 });
             }
         );
@@ -42,14 +48,17 @@ const addUser = app.post('/', async (request, response) => {
     try {
         const data = {
             "user": {
-            name: request.body.name,
-            address: request.body.address,
-            city: request.body.city,
-            zip_code: request.body.zip_code,
-            landline: request.body.landline,
-            phone: request.body.phone,
-            cpf: request.body.cpf,
-            rg: request.body.rg,
+            name: request.body.user.name,
+            lastname: request.body.user.lastname,
+            address: request.body.user.address,
+            city: request.body.user.city,
+            state: request.body.user.state,
+            zip_code: request.body.user.zip_code,
+            landline: request.body.user.landline,
+            phone: request.body.user.phone,
+            cpf: request.body.user.cpf,
+            rg: request.body.user.rg,
+            payment: request.body.user.payment,
             created_at: new Date().toISOString(),
             updated_at: new Date().toISOString()
         },
@@ -78,14 +87,16 @@ const updateUser = app.put('/:id', async (request, response) => {
         if (!userId) throw new Error('id is blank');
 
         const data = {
-            name: request.body.name,
-            address: request.body.address,
-            city: request.body.city,
-            zip_code: request.body.zip_code,
-            landline: request.body.landline,
-            phone: request.body.phone,
-            cpf: request.body.cpf,
-            rg: request.body.rg,
+            name: request.body.user.name,
+            lastname: request.body.user.lastname,
+            address: request.body.user.address,
+            city: request.body.user.city,
+            state: request.body.user.state,
+            zip_code: request.body.user.zip_code,
+            landline: request.body.user.landline,
+            phone: request.body.user.phone,
+            cpf: request.body.user.cpf,
+            rg: request.body.user.rg,
             updated_at: new Date().toISOString()
         };
 
