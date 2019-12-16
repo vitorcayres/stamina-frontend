@@ -1,6 +1,8 @@
 const admin = require('firebase-admin');
-const app = require('express')();
 const db = admin.firestore().collection('levels');
+const app = require('express')();
+const cors = require('cors');
+app.use(cors({ origin: true }));
 
 /**
  * List level

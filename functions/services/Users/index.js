@@ -1,9 +1,8 @@
 const admin = require('firebase-admin');
 const app = require('express')();
-var cors = require('cors');
 const db = admin.firestore().collection('users');
-
-app.use(cors());
+const cors = require('cors');
+app.use(cors({ origin: true }));
 
 /**
  * List user
