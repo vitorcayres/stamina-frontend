@@ -3,6 +3,10 @@ import FormRegister from '../../components/Forms/Register'
 import FormPayment from '../../components/Forms/Payment'
 import Loading from '../../components/Loading'
 
+import { 
+    addUsers 
+} from '../../services/Users'
+
 export default class Register extends React.Component {
 
     constructor() {
@@ -18,11 +22,12 @@ export default class Register extends React.Component {
             phone: null,
             cpf: null,
             rg: null,
-            payment: null,
+            pay: true,
             loading: false,
             displayFormRegister: 'block',
             displayFormPayment: 'none',
-            displaySuccessPayment: 'none'
+            displaySuccessPayment: 'none',
+            displayButtonPaypal: 'block'
         }
 
         this.handleChangeFormRegister = this.handleChangeFormRegister.bind(this);
@@ -52,13 +57,66 @@ export default class Register extends React.Component {
 
     handleOnSuccessPayment(data) {
 
-        this.setState({
-            loading: false,
-            displayFormPayment: 'none',
-            displaySuccessPayment: 'block'
+        const { 
+            name,
+            lastname,
+            address,
+            city,
+            zip_code,
+            landline,
+            phone,
+            cpf,
+            rg,
+            pay
+        } = this.state;
+
+        const body = {
+            user: {
+                name: name,
+                lastname: lastname,
+                address: address,
+                city: city,
+                zip_code: zip_code,
+                landline: landline,
+                phone: phone,
+                cpf: cpf,
+                rg: rg,
+                pay: pay
+            },
+            payment: data
+        };
+
+        this.setState({ 
+            loading: true, 
+            displayButtonPaypal: 'none' 
         });
 
-        console.log('success payment', data)
+        console.log(body)
+
+        let that = this;
+
+        addUsers(body).then(function (response) {
+
+            setTimeout(() => {
+                that.setState({
+                    loading: false,
+                    displayFormPayment: 'none',
+                    displaySuccessPayment: 'block'
+                });
+            }, 2000);
+
+            console.log('success payment', response)
+
+        }).catch(function (err) {
+
+            that.setState({
+                loading: false,
+                displayFormPayment: 'none',
+                displaySuccessPayment: 'block'
+            });
+
+            console.log('error payment', err)
+        });
     }
 
     render() {
@@ -77,6 +135,7 @@ export default class Register extends React.Component {
                     handleChange={this.handleChangeFormRegister}
                     handleSubmit={this.handleSubmitFormRegister}
                     handleOnSuccessPayment={(data) => this.handleOnSuccessPayment(data)}
+                    displayButtonPaypal={this.state.displayButtonPaypal}
                 />
 
                 <div className="container" style={{ display: this.state.displaySuccessPayment }}>

@@ -1,6 +1,9 @@
 const admin = require('firebase-admin');
 const app = require('express')();
+var cors = require('cors');
 const db = admin.firestore().collection('users');
+
+app.use(cors());
 
 /**
  * List user
@@ -12,17 +15,22 @@ const listUser = app.get('/', async (request, response) => {
         userQuerySnapshot.forEach(
             (doc) => {
                 users.push({
-                    id: doc.id,
-                    name: doc.data().name,
-                    address: doc.data().address,
-                    city: doc.data().city,
-                    zip_code: doc.data().zip_code,
-                    landline: doc.data().landline,
-                    phone: doc.data().phone,
-                    cpf: doc.data().cpf,
-                    rg: doc.data().rg,
-                    created_at: doc.data().created_at,
-                    updated_at: doc.data().update_at
+                    user: {
+                        id: doc.id,
+                        name: doc.data().user.name,
+                        lastname: doc.data().user.lastname,
+                        address: doc.data().user.address,
+                        city: doc.data().user.city,
+                        zip_code: doc.data().user.zip_code,
+                        landline: doc.data().user.landline,
+                        phone: doc.data().user.phone,
+                        cpf: doc.data().user.cpf,
+                        rg: doc.data().user.rg,
+                        pay: doc.data().user.pay,
+                        created_at: new Date().toISOString(),
+                        updated_at: new Date().toISOString()
+                    },
+                    payment: doc.data().payment
                 });
             }
         );
@@ -37,19 +45,25 @@ const listUser = app.get('/', async (request, response) => {
  * Insert user
  */
 const addUser = app.post('/', async (request, response) => {
-    try {
+    try {        
         const data = {
-            name: request.body.name,
-            address: request.body.address,
-            city: request.body.city,
-            zip_code: request.body.zip_code,
-            landline: request.body.landline,
-            phone: request.body.phone,
-            cpf: request.body.cpf,
-            rg: request.body.rg,
-            created_at: new Date().toISOString(),
-            updated_at: new Date().toISOString()
+            user: {
+                name: request.body.user.name,
+                lastname: request.body.user.lastname,
+                address: request.body.user.address,
+                city: request.body.user.city,
+                zip_code: request.body.user.zip_code,
+                landline: request.body.user.landline,
+                phone: request.body.user.phone,
+                cpf: request.body.user.cpf,
+                rg: request.body.user.rg,
+                pay: request.body.user.pay,
+                created_at: new Date().toISOString(),
+                updated_at: new Date().toISOString()
+            },
+            payment: request.body.payment
         };
+
         const usersRef = await db.add(data);
         const users = await usersRef.get();
 
@@ -72,15 +86,17 @@ const updateUser = app.put('/:id', async (request, response) => {
         if (!userId) throw new Error('id is blank');
 
         const data = {
-            name: request.body.name,
-            address: request.body.address,
-            city: request.body.city,
-            zip_code: request.body.zip_code,
-            landline: request.body.landline,
-            phone: request.body.phone,
-            cpf: request.body.cpf,
-            rg: request.body.rg,
-            updated_at: new Date().toISOString()
+            user: {
+                name: request.body.user.name,
+                address: request.body.user.address,
+                city: request.body.user.city,
+                zip_code: request.body.user.zip_code,
+                landline: request.body.user.landline,
+                phone: request.body.user.phone,
+                cpf: request.body.user.cpf,
+                rg: request.body.user.rg,
+                updated_at: new Date().toISOString()
+            }
         };
 
         await db.doc(userId).set(data, { merge: true });

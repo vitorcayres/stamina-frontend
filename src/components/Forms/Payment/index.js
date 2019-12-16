@@ -19,26 +19,28 @@ export default (props) => {
                                         <h4 className="my-0 font-weight-normal">Plano Premium</h4>
                                     </div>
                                     <div className="card-body">
-                                        <h1 className="card-title pricing-card-title">R$ 100,00 <small className="text-muted">/ ano</small></h1>
+                                        <h1 className="card-title pricing-card-title">R$ 1,00 <small className="text-muted">/ ano</small></h1>
                                         <ul className="list-unstyled mt-3 mb-4">
                                             <li>3 niveis de aula</li>
                                             <li>Suporte</li>
                                             <li>Acesso ao centro de ajuda</li>
                                         </ul>
-                                        <PayPalButton
-                                            amount="100.00"
-                                            style={{
-                                                layout: 'vertical',
-                                                color: 'gold',
-                                                shape: 'rect',
-                                                label: 'buynow'
-                                            }}
-                                            onSuccess={(data) => props.handleOnSuccessPayment(data)}
-                                            options={{
-                                                clientId: "AWsEZXDJ9bmY1hLtL7Z4c_GtLvHV3gmRM41TdlS-u042Cfa7f0ji_Mn-OLTLB8BYS2BsA_qVt6JiVIhZ",
-                                                currency: "BRL"
-                                            }}
-                                        />
+                                        <div style={{ display: props.displayButtonPaypal }}>
+                                            <PayPalButton
+                                                amount="1.00"
+                                                style={{
+                                                    layout: 'vertical',
+                                                    color: 'gold',
+                                                    shape: 'rect',
+                                                    label: 'buynow'
+                                                }}
+                                                onSuccess={(data) => props.handleOnSuccessPayment(data)}
+                                                options={{
+                                                    clientId: "AWsEZXDJ9bmY1hLtL7Z4c_GtLvHV3gmRM41TdlS-u042Cfa7f0ji_Mn-OLTLB8BYS2BsA_qVt6JiVIhZ",
+                                                    currency: "BRL"
+                                                }}
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
