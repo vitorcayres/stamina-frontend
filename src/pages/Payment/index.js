@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 import FormRegister from '../../components/Forms/Register'
 import FormPayment from '../../components/Forms/Payment'
 import Loading from '../../components/Loading'
@@ -33,8 +32,7 @@ export default class Register extends React.Component {
 
         this.handleChangeFormRegister = this.handleChangeFormRegister.bind(this);
         this.handleSubmitFormRegister = this.handleSubmitFormRegister.bind(this);
-        this.onSuccess = this.onSuccess.bind(this);
-        this.onCancel = this.onCancel.bind(this);
+        this.handleOnSuccessPayment = this.handleOnSuccessPayment.bind(this);
     }
 
     handleChangeFormRegister(e) {

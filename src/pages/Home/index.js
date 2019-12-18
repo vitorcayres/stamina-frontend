@@ -1,10 +1,36 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Layout from '../../layout'
 
 export default () => {
     return (
-        <Layout>
+        <div className="site-wrap">
+            <div className="site-mobile-menu site-navbar-target">
+                <div className="site-mobile-menu-header">
+                    <div className="site-mobile-menu-close mt-3">
+                        <span className="icon-close2 js-menu-toggle" />
+                    </div>
+                </div>
+                <div className="site-mobile-menu-body" />
+            </div>
+            <header className="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+                <div className="container-fluid">
+                    <div className="d-flex align-items-center">
+                        <div className="site-logo"><a href="index.html">Stamina<span>.</span> </a></div>
+                        <div className="ml-auto">
+                            <nav className="site-navigation position-relative text-right" role="navigation">
+                                <ul className="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                                    <li><a href="#home-section" className="nav-link">Home</a></li>
+                                    <li><a href="#trainer-section" className="nav-link">Trainer</a></li>
+                                    <li><a href="#contact-section" className="nav-link">Contato</a></li>
+                                    <li><Link to="/payment" className="nav-link">Adquira Já!</Link></li>
+                                    <li><Link to="/authentication" className="nav-link">Minha Conta</Link></li>
+                                </ul>
+                            </nav>
+                            <a href="/#" className="d-inline-block d-lg-none site-menu-toggle js-menu-toggle float-right"><span className="icon-menu h3" /></a>
+                        </div>
+                    </div>
+                </div>
+            </header>
             <a href="/#" id="bgndVideo" className="player" data-property="{videoURL:'https://www.youtube.com/watch?v=w-cRWOjlk8c',showYTLogo:false, showAnnotations: false, showControls: false, cc_load_policy: false, containment:'#home-section',autoPlay:true, mute:true, startAt:255, stopAt: 271, opacity:1}">
             </a>
             <div className="intro-section" id="home-section" style={{ backgroundColor: '#ccc' }}>
@@ -14,7 +40,7 @@ export default () => {
                             <h1 className="mb-3">Emagreça, fique em forma!</h1>
                             <p className="lead mx-auto desc mb-5">Exercícios SMART estão ajudando pessoas comuns a emagrecer, venha conhecer como!</p>
                             <p className="text-center">
-                                <Link to="/dashboard" className="btn btn-outline-white py-3 px-5">Vamos começar!</Link>
+                                <Link to="/payment" className="btn btn-outline-white py-3 px-5">Adquira já!</Link>
                             </p>
                         </div>
                     </div>
@@ -27,7 +53,7 @@ export default () => {
                             <span className="subheading">Mantenha-se saudável</span>
                             <h2 className="heading mb-3">Obtenha um corpo perfeito</h2>
                             <p>O exercício físico é qualquer atividade que mantém ou aumenta a aptidão física em geral, e tem o objetivo de alcançar a saúde e também a recreação.
-                                A razão da prática de exercícios inclui: o reforço da musculatura e do sistema cardiovascular; o aperfeiçoamento das habilidades atléticas; a perda de peso e/ou a manutenção de alguma parte do corpo.</p>
+A razão da prática de exercícios inclui: o reforço da musculatura e do sistema cardiovascular; o aperfeiçoamento das habilidades atléticas; a perda de peso e/ou a manutenção de alguma parte do corpo.</p>
                         </div>
                     </div>
                     <div className="owl-carousel nonloop-block-14 block-14" data-aos="fade">
@@ -182,6 +208,47 @@ texts.Separated they live in Bookmarksgrove right at the coast of the Semantics,
                     </div>
                 </div>
             </div>
-        </Layout>
+            <footer className="footer-section">
+                <div className="container">
+                    {/* <div class="row">
+<div class="col-md-4">
+<h3 class="text-dark">Sobre Stamina</h3>
+<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+</div>
+
+<div class="col-md-3 ml-auto">
+<h3 class="text-dark">Links</h3>
+<ul class="list-unstyled footer-links">
+<li><a href="#">Home</a></li>
+<li><a href="#">Classes</a></li>
+<li><a href="#">Schedule</a></li>
+<li><a href="#">Trainer</a></li>
+</ul>
+</div>
+
+<div class="col-md-4">
+<h3 class="text-dark">Subscribe</h3>
+<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+</p>
+<form action="#">
+<div class="d-flex mb-5">
+<input type="text" class="form-control rounded-0" placeholder="Email">
+<input type="submit" class="btn btn-primary rounded-0" value="Subscribe">
+</div>
+</form>
+</div>
+
+</div> */}
+                    <div className="row text-center">
+                        <div className="col-md-12">
+                            <div className=" pt-5">
+                                {/* Link back to Free-Template.co can't be removed. Template is licensed under CC BY 3.0. */}
+                                <p className="copyright"><small>© Stamina. Todos os direitos reservados.</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
     );
 }
