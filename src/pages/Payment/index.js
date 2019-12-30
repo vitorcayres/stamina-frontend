@@ -3,11 +3,19 @@ import FormRegister from '../../components/Forms/Register'
 import FormPayment from '../../components/Forms/Payment'
 import Loading from '../../components/Loading'
 
-import { 
-    addUsers 
+import {
+    addUsers
 } from '../../services/Users'
 
-export default class Register extends React.Component {
+import {
+    getClassesByLevel
+} from '../../services/ClassesByLevel'
+
+import {
+    addUsersClassesByLevel
+} from '../../services/UsersClassesByLevel'
+
+export default class Payment extends React.Component {
 
     constructor() {
         super();
@@ -26,13 +34,47 @@ export default class Register extends React.Component {
             loading: false,
             displayFormRegister: 'block',
             displayFormPayment: 'none',
-            displaySuccessPayment: 'none',
-            displayButtonPaypal: 'block'
+            displaySuccessPayment: 'none'
         }
 
         this.handleChangeFormRegister = this.handleChangeFormRegister.bind(this);
         this.handleSubmitFormRegister = this.handleSubmitFormRegister.bind(this);
-        this.handleOnSuccessPayment = this.handleOnSuccessPayment.bind(this);
+        this.onPaymentStart = this.onPaymentStart.bind(this);
+        this.onPaymentSuccess = this.onPaymentSuccess.bind(this);
+    }
+
+    /**
+     * Get Classes By Level 
+     */
+    async getClassesByLevel() {
+        try {
+            return await getClassesByLevel();
+        } catch (error) {
+            if (error.response) {
+                console.log('error api data: ', error.response.data);
+            } else if (error.request) {
+                console.log('error api request:', error.request)
+            } else {
+                console.log('error api message:', error.message);
+            }
+        }
+    }
+
+    /**
+     * Get Classes By Level 
+     */
+    async addUsersClassesByLevel(body) {
+        try {
+            return await addUsersClassesByLevel(body);
+        } catch (error) {
+            if (error.response) {
+                console.log('error api data: ', error.response.data);
+            } else if (error.request) {
+                console.log('error api request:', error.request)
+            } else {
+                console.log('error api message:', error.message);
+            }
+        }
     }
 
     handleChangeFormRegister(e) {
@@ -40,7 +82,7 @@ export default class Register extends React.Component {
     }
 
     handleSubmitFormRegister(e) {
-        console.log('info user', this.state)
+        console.log('info user:', this.state)
 
         this.setState({ loading: true });
 
@@ -55,9 +97,13 @@ export default class Register extends React.Component {
         e.preventDefault();
     }
 
-    handleOnSuccessPayment(data) {
+    onPaymentStart() {
+        this.setState({ loading: true });
+    }
 
-        const { 
+    onPaymentSuccess(data) {
+
+        const {
             name,
             lastname,
             address,
@@ -71,26 +117,31 @@ export default class Register extends React.Component {
         } = this.state;
 
         const body = {
-            user: {
-                name: name,
-                lastname: lastname,
-                address: address,
-                city: city,
-                zip_code: zip_code,
-                landline: landline,
-                phone: phone,
-                cpf: cpf,
-                rg: rg,
-                pay: pay
-            },
-            payment: data
+            name: name,
+            lastname: lastname,
+            address: address,
+            city: city,
+            zip_code: zip_code,
+            landline: landline,
+            phone: phone,
+            cpf: cpf,
+            rg: rg,
+            pay: pay
         };
-
-        console.log(body)
 
         let that = this;
 
-        addUsers(body).then(function (response) {
+        addUsers(body).then(response => {
+            console.log('user info:', response.data)
+        })
+        .then(() => this.getClassesByLevel())
+        .then(response => {
+            console.log('get classes by level:', response.data)
+            let body = { phone: phone, data: response.data }
+            return body;
+        }).then(body => this.addUsersClassesByLevel(body))
+        .then(response => {
+            console.log('success user classes by level', response.data);
 
             setTimeout(() => {
                 that.setState({
@@ -100,16 +151,13 @@ export default class Register extends React.Component {
                 });
             }, 2000);
 
-            console.log('success payment', response)
-
-        }).catch(function (err) {
-
+        })
+        .catch(function (err) {
             that.setState({
                 loading: false,
                 displayFormPayment: 'none',
                 displaySuccessPayment: 'block'
             });
-
             console.log('error payment', err)
         });
     }
@@ -129,8 +177,8 @@ export default class Register extends React.Component {
                     display={this.state.displayFormPayment}
                     handleChange={this.handleChangeFormRegister}
                     handleSubmit={this.handleSubmitFormRegister}
-                    handleOnSuccessPayment={(data) => this.handleOnSuccessPayment(data)}
-                    displayButtonPaypal={this.state.displayButtonPaypal}
+                    onPaymentStart={this.onPaymentStart}
+                    onPaymentSuccess={(data) => this.onPaymentSuccess(data)}
                 />
 
                 <div className="container" style={{ display: this.state.displaySuccessPayment }}>

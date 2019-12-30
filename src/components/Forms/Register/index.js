@@ -20,11 +20,11 @@ export default (props) => {
                                 <h6 className="my-0">Plano Premium</h6>
                                 <small>3 niveis de aula</small>
                             </div>
-                            <span className="text-success">R$ 100,00 / ano</span>
+                            <span className="text-success">R$ 1,00 / ano</span>
                         </li>
                         <li className="list-group-item d-flex justify-content-between">
                             <span>Total</span>
-                            <strong>R$ 100,00</strong>
+                            <strong>R$ 1,00</strong>
                         </li>
                     </ul>
                 </div>

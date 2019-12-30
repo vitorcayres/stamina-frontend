@@ -1,35 +1,24 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 export default () => {
     return (
-        <React.Fragment>
-                <div className="site-mobile-menu site-navbar-target">
-                    <div className="site-mobile-menu-header">
-                        <div className="site-mobile-menu-close mt-3">
-                            <span className="icon-close2 js-menu-toggle" />
-                        </div>
-                    </div>
-                    <div className="site-mobile-menu-body" />
+        <nav className="navbar navbar-expand-lg">
+            <div className="container">
+                <div className="site-logo" style={{ color: '#000' }}>Stamina<span style={{ color: '#f23a2e' }}>.</span></div>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon" />
+                </button>
+                <div className="collapse navbar-collapse" id="navbarsExample07">
+                    <ul className="navbar-nav ml-auto">
+                        <li className="nav-item active">
+                            <a className="nav-link" href="/#">Home <span className="sr-only">(atual)</span></a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/#">Sair</a>
+                        </li>
+                    </ul>
                 </div>
-                <header className="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
-                    <div className="container-fluid">
-                        <div className="d-flex align-items-center">
-                            <div className="site-logo"><a href="index.html">Stamina<span>.</span> </a></div>
-                            <div className="ml-auto">
-                                <nav className="site-navigation position-relative text-right" role="navigation">
-                                    <ul className="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                                        <li><a href="#home-section" className="nav-link">Home</a></li>
-                                        <li><a href="#trainer-section" className="nav-link">Trainer</a></li>
-                                        <li><a href="#contact-section" className="nav-link">Contato</a></li>
-                                        <li><Link to="/auth" className="nav-link">Minha Conta</Link></li>
-                                    </ul>
-                                </nav>
-                                <a href="/#" className="d-inline-block d-lg-none site-menu-toggle js-menu-toggle float-right"><span className="icon-menu h3" /></a>
-                            </div>
-                        </div>
-                    </div>
-                </header>
-        </React.Fragment>
+            </div>
+        </nav>
     );
 }

@@ -13,10 +13,7 @@ const listClassesByLevel = app.get('/', async (request, response) => {
         const classesByLevel = [];
         classeQuerySnapshot.forEach(
             (doc) => {
-                classesByLevel.push({
-                    id: doc.id,
-                    data: doc.data()
-                });
+                classesByLevel.push(doc.data());
             }
         );
         response.json(classesByLevel);

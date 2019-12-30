@@ -1,5 +1,18 @@
 import React from 'react'
-import { PayPalButton } from 'react-paypal-button-v2'
+import { PayPalButton } from 'react-paypal-button'
+
+const paypalOptions = {
+    clientId: 'AWsEZXDJ9bmY1hLtL7Z4c_GtLvHV3gmRM41TdlS-u042Cfa7f0ji_Mn-OLTLB8BYS2BsA_qVt6JiVIhZ',
+    currency: 'BRL',
+    intent: 'capture'
+}
+
+const buttonStyles = {
+    layout: 'vertical',
+    color: 'gold',
+    shape: 'rect',
+    label: 'buynow'
+}
 
 export default (props) => {
     return (
@@ -25,20 +38,13 @@ export default (props) => {
                                             <li>Suporte</li>
                                             <li>Acesso ao centro de ajuda</li>
                                         </ul>
-                                        <div style={{ display: props.displayButtonPaypal }}>
+                                        <div style={{ position: 'sticky' }}>
                                             <PayPalButton
-                                                amount="1.00"
-                                                style={{
-                                                    layout: 'vertical',
-                                                    color: 'gold',
-                                                    shape: 'rect',
-                                                    label: 'buynow'
-                                                }}
-                                                onSuccess={(data) => props.handleOnSuccessPayment(data)}
-                                                options={{
-                                                    clientId: "AWsEZXDJ9bmY1hLtL7Z4c_GtLvHV3gmRM41TdlS-u042Cfa7f0ji_Mn-OLTLB8BYS2BsA_qVt6JiVIhZ",
-                                                    currency: "BRL"
-                                                }}
+                                                paypalOptions={paypalOptions}
+                                                buttonStyles={buttonStyles}
+                                                amount={1.00}
+                                                onPaymentStart={props.onPaymentStart}
+                                                onPaymentSuccess={(data) => props.onPaymentSuccess(data)}
                                             />
                                         </div>
                                     </div>

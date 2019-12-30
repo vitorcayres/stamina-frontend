@@ -3,6 +3,10 @@ import FormSendPincode from '../../components/Forms/Login/SendPincode'
 import FormValidatePincode from '../../components/Forms/Login/ValidatePincode'
 import Loading from '../../components/Loading'
 
+import { 
+    getUserbyPhone 
+} from '../../services/Users'
+
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import './styles.css'
@@ -63,10 +67,19 @@ export default class Auth extends React.Component {
             const { phoneNumber } = this.state;
             this.setState({ loading: true, message: '' });
             const appVerifier = window.recaptchaVerifier;
-    
-            firebase.auth().signInWithPhoneNumber('+55' + phoneNumber, appVerifier)
-                .then(confirmResult => this.setState({ confirmResult, loading: false }))
-                .catch(error => this.setState({ loading: false, message: 'Ops, ocorreu um erro, tente novamente! :(' }));
+
+            let that = this;
+
+            getUserbyPhone(phoneNumber).then(function (response) {
+                console.log('user info:', response.data)
+                
+                firebase.auth().signInWithPhoneNumber(`+${phoneNumber}`, appVerifier)
+                    .then(confirmResult => that.setState({ confirmResult, loading: false }))
+                    .catch(error => that.setState({ loading: false, message: 'Ops, ocorreu um erro, tente novamente! :(' }));
+
+            }).catch(function (err) {
+                that.setState({ loading: false, message: 'Ops, você não possui um cadastro!'});
+            });
         }
         event.preventDefault();
     };

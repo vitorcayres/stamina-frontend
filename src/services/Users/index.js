@@ -10,9 +10,17 @@ const HEADERS = {
 }
 
 /**
- * Add User
+ * Add user
  * @param {json} body 
  */
 export function addUsers(body){
     return axios.post(`${URL}/usersAdd`, body, { headers: HEADERS });
+}
+
+/**
+ * Get user by phone
+ * @param {json} body 
+ */
+export function getUserbyPhone(phoneNumber){
+    return axios.get(`${URL}/usersListByPhone/${phoneNumber}`, { headers: HEADERS });
 }
