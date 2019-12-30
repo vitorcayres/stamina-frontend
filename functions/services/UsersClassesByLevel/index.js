@@ -13,13 +13,44 @@ const listUsersClassesByLevel = app.get('/', async (request, response) => {
         const usersClassesByLevel = [];
         querySnapshot.forEach(
             (doc) => {
-                usersClassesByLevel.push({
-                    id: doc.id,
-                    data: doc.data()
-                });
+                usersClassesByLevel.push(doc.data());
             }
         );
         response.json(usersClassesByLevel);
+
+    } catch (error) {
+        response.status(500).send(error);
+    }
+});
+
+/**
+ * List user by phone
+ */
+const listUsersClassesLevelbyPhone = app.get('/:phone', async (request, response) => {
+    try {
+
+        const phone = request.params.phone;
+        if (!phone) throw new Error('phone is blank');
+
+        const querySnapshot = await db.where('phone', '==', phone).get()
+        .then(querySnapshot => {
+            if (querySnapshot.empty) {
+                response.status(500).send(error);
+                return;
+            }
+
+            const users = [];
+            querySnapshot.forEach(
+                (doc) => {
+                    users.push(doc.data());
+                }
+            );
+            response.json(users);
+
+        })
+        .catch(error => {
+            response.status(500).send(error);
+        });
 
     } catch (error) {
         response.status(500).send(error);
@@ -85,6 +116,7 @@ const deleteUsersClassesByLevel = app.delete('/:id', async (request, response) =
 
 module.exports = {
     listUsersClassesByLevel,
+    listUsersClassesLevelbyPhone,
     addUsersClassesByLevel,
     updateUsersClassesByLevel,
     deleteUsersClassesByLevel

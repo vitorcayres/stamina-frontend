@@ -4,7 +4,7 @@ admin.initializeApp();
 
 // Express Servers
 const { listUser, listUserByPhone, addUser, updateUser, deleteUser } = require('./services/Users');
-const { listUsersClassesByLevel, addUsersClassesByLevel, updateUsersClassesByLevel, deleteUsersClassesByLevel } = require('./services/UsersClassesByLevel');
+const { listUsersClassesByLevel, listUsersClassesLevelbyPhone, addUsersClassesByLevel, updateUsersClassesByLevel, deleteUsersClassesByLevel } = require('./services/UsersClassesByLevel');
 const { listLevels, addLevels, updateLevels, deleteLevels } = require('./services/Levels');
 const { listClasses, addClasses, updateClasses, deleteClasses } = require('./services/Classes');
 const { listClassesByLevel, addClassesByLevel, updateClassesByLevel, deleteClassesByLevel } = require('./services/ClassesByLevel');
@@ -18,10 +18,10 @@ const usersDelete = functions.https.onRequest(deleteUser);
 
 /** HTTP Cloud Functions Users Classes By Level */
 const usersClassesByLevelList = functions.https.onRequest(listUsersClassesByLevel);
+const usersClassesLevelListByPhone = functions.https.onRequest(listUsersClassesLevelbyPhone);
 const usersClassesByLevelAdd = functions.https.onRequest(addUsersClassesByLevel);
 const usersClassesByLevelUpdate = functions.https.onRequest(updateUsersClassesByLevel);
 const usersClassesByLevelDelete = functions.https.onRequest(deleteUsersClassesByLevel);
-
 
 /** HTTP Cloud Functions Levels */
 const levelsList = functions.https.onRequest(listLevels);
@@ -49,6 +49,7 @@ module.exports = {
     usersUpdate,
     usersDelete,
     usersClassesByLevelList,
+    usersClassesLevelListByPhone,
     usersClassesByLevelAdd,
     usersClassesByLevelUpdate,
     usersClassesByLevelDelete,
