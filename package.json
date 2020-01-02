@@ -10,6 +10,7 @@
     "react-fullscreen-loading": "0.0.4",
     "react-number-format": "^4.3.1",
     "react-paypal-button": "^4.1.1",
+    "react-player": "^1.14.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.2.0"
   },

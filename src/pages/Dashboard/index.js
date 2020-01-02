@@ -1,40 +1,58 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Layout from '../../layout'
 import Loading from '../../components/Loading'
+import {
+    LevelBasic,
+    LevelIntermediary,
+    LevelAdvanced
+} from '../../components/Levels'
 
 import {
-    addUsersClassesByLevel
+    usersClassesLevelListByPhone
 } from '../../services/UsersClassesByLevel'
 
 export default class Dashboard extends React.Component {
 
-    constructor(){
+    /**
+     * Constructor
+     */
+    constructor() {
         super();
 
         this.state = {
-            loading: false
+            loading: false,
+            levels: []
         }
     }
 
-    componentDidMount(){
+    /**
+     * Component did mount
+     */
+    componentDidMount() {
         this.setState({ loading: true })
+        let phoneNumber = localStorage.getItem('phoneNumber');
 
-        setTimeout(() => {
-            this.setState({ loading: false })            
-        }, 1000);
+        usersClassesLevelListByPhone(phoneNumber).then(response => {
+            this.setState({ loading: false, levels: response.data[0].data })
+        })
+        .catch(function (err) {
+            this.setState({ loading: false })
+        });
     }
 
-    componentWillUnmount(){
+    /**
+     * Component will unmount
+     */
+    componentWillUnmount() {
         this.setState({ loading: false })
     }
 
     /**
      * Get Classes By Level 
      */
-    async addUsersClassesByLevel(body) {
+    async usersClassesLevelListByPhone(phone) {
         try {
-            return await addUsersClassesByLevel(body);
+            return await usersClassesLevelListByPhone(phone);
         } catch (error) {
             if (error.response) {
                 console.log('error api data: ', error.response.data);
@@ -46,8 +64,21 @@ export default class Dashboard extends React.Component {
         }
     }
 
+    /**
+     * Get levels by user
+     * @param {array} data 
+     */
+    getLevels(data) {
+        switch (data.name) {
+            case 'BASIC': return <LevelBasic id={data.id} />;
+            case 'INTERMEDIARY': return <LevelIntermediary id={data.id} />;
+            case 'ADVANCED': return <LevelAdvanced id={data.id} />;
+            default: return null;
+        }
+    }
+
     render() {
-        const { loading } = this.state;
+        const { loading, levels } = this.state;
 
         return (
             <Layout>
@@ -62,39 +93,11 @@ export default class Dashboard extends React.Component {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col-lg-4 mb-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay>
-                                <Link to="/classes">
-                                    <div className="ftco-feature-1">
-                                        <span className="icon flaticon-fit" />
-                                        <div className="ftco-feature-1-text">
-                                            <h2>Iniciante</h2>
-                                            {/* <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> */}
-                                        </div>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="col-lg-4 mb-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay={100}>
-                                <Link to="/classes">
-                                    <div className="ftco-feature-1">
-                                        <span className="icon flaticon-gym-1" />
-                                        <div className="ftco-feature-1-text">
-                                            <h2>Intermediário</h2>
-                                            {/* <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> */}
-                                        </div>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="col-lg-4 mb-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay={200}>
-                                <Link to="/classes">
-                                    <div className="ftco-feature-1">
-                                        <span className="icon flaticon-gym" />
-                                        <div className="ftco-feature-1-text">
-                                            <h2>Avançado</h2>
-                                            {/* <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p> */}
-                                        </div>
-                                    </div>
-                                </Link>
-                            </div>
+                            {levels.map((rows, key) => (
+                                <React.Fragment key={key}>
+                                    {this.getLevels(rows.levels)}
+                                </React.Fragment>
+                            ))}
                         </div>
                     </div>
                 </div>

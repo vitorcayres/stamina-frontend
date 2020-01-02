@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default () => {
     return (
@@ -11,8 +12,8 @@ export default () => {
                 <div className="collapse navbar-collapse" id="navbarsExample07">
                     <ul className="navbar-nav ml-auto">
                         <li className="nav-item active">
-                            <a className="nav-link" href="/#">Home <span className="sr-only">(atual)</span></a>
-                        </li>
+                            <Link className="nav-link" to="/dashboard">Dashboard <span className="sr-only">(atual)</span></Link>
+                        </li>                        
                         <li className="nav-item">
                             <a className="nav-link" href="/#">Sair</a>
                         </li>

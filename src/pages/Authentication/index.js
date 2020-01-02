@@ -2,10 +2,7 @@ import React from 'react'
 import FormSendPincode from '../../components/Forms/Login/SendPincode'
 import FormValidatePincode from '../../components/Forms/Login/ValidatePincode'
 import Loading from '../../components/Loading'
-
-import { 
-    getUserbyPhone 
-} from '../../services/Users'
+import { getUserbyPhone } from '../../services/Users'
 
 import firebase from 'firebase/app'
 import 'firebase/auth'
@@ -82,26 +79,6 @@ export default class Auth extends React.Component {
             });
         }
         event.preventDefault();
-    };
-
-    confirmCode = event => {
-        if(this.state.codeInput === ''){
-            this.setState({ loading: false, message: 'Ops, preencha o campo com seu código!'});
-        }else{
-            const { codeInput, confirmResult } = this.state;
-            this.setState({ loading: true });
-    
-            if (confirmResult && codeInput.length) {
-                confirmResult.confirm(codeInput)
-                    .then((user) => { console.log(user); })
-                    .catch(error => this.setState({ loading: false, message: 'Ops, ocorreu um erro, tente novamente! :(' }));
-            }
-        }
-        event.preventDefault();
-    };
-
-    signOut = () => {
-        firebase.auth().signOut();
     }
 
     handleChangeSendPincode = event => {
@@ -111,12 +88,32 @@ export default class Auth extends React.Component {
     handleChangeValidatePincode = event => {
         this.setState({ codeInput: event.target.value });
     }
+    
+    confirmCode = event => {
+        if(this.state.codeInput === ''){
+            this.setState({ loading: false, message: 'Ops, preencha o campo com seu código!'});
+        }else{
+            const { codeInput, confirmResult } = this.state;
+            this.setState({ loading: true });
+    
+            if (confirmResult && codeInput.length) {
+                confirmResult.confirm(codeInput)
+                    .then((user) => { localStorage.setItem('phoneNumber', this.state.phoneNumber); })
+                    .catch(error => this.setState({ loading: false, message: 'Ops, ocorreu um erro, tente novamente! :(' }));
+            }
+        }
+        event.preventDefault();
+    }
 
-    renderMessage() {
+    signOut = () => {
+        firebase.auth().signOut();
+    }
+    
+    renderMessage = () => {
         const { message } = this.state;
-
+        
         if (!message.length) return null;
-
+        
         return (
             <div className="modal-body">
                 <p style={{ fontSize: '16px', padding: 5, backgroundColor: '#000', color: '#fff' }}>{message}</p>
