@@ -15,7 +15,7 @@ export default () => (
             <Route path="/" exact={true} component={Home} />
             <Route path="/dashboard" exact={true} component={Dashboard} /> 
             <Route path="/classes/:id" exact={true} component={Classes} />
-            <Route path="/my-classes/:classes_id/:id" exact={true} component={MyClasses} />
+            <Route path="/my-classes/:level_id/:id" exact={true} component={MyClasses} />
             <Route path="/authentication" exact={true} component={Authentication} />
             <Route path="/payment" exact={true} component={Payment} />
             <Route path='*' exact={true} component={Page404} />

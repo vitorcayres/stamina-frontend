@@ -16,6 +16,7 @@ const listLevels = app.get('/', async (request, response) => {
                 levels.push({
                     id: doc.id,
                     name: doc.data().name,
+                    disabled: doc.data().disabled,
                     created_at: doc.data().created_at,
                     updated_at: doc.data().update_at
                 });
@@ -35,6 +36,7 @@ const addLevels = app.post('/', async (request, response) => {
     try {
         const data = {
             name: request.body.name,
+            disabled: request.body.disabled,
             created_at: new Date().toISOString(),
             updated_at: new Date().toISOString()
         };

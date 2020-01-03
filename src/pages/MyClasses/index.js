@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../../layout'
+import Loading from '../../components/Loading'
 import Video from '../../components/Video'
 
 import {
@@ -26,27 +27,34 @@ export default class MyClasses extends React.Component {
     componentDidMount() {
         this.setState({ loading: true })
         let phoneNumber = localStorage.getItem('phoneNumber');
-        let classes_id = this.props.match.params.classes_id;
+        let level_id = this.props.match.params.level_id;
         let id = this.props.match.params.id;
 
         usersClassesLevelListByPhone(phoneNumber).then(response => {
-            let data = response.data[0].data;
-            let myClasses = [];
 
-            data.map((rows) => {
-                console.log(rows)
+            console.log('user info: ', response.data)
 
-                // if (rows.levels.id === id) {
-                //     myClasses = rows.classes;
-                // }
-                // return myClasses;
+            let data = [];
+
+            response.data[0].data.map((rows) => {
+                if (rows.levels.id === level_id) {
+                    rows.classes.map((rows) => {
+                        if (rows.id === id) {
+                            data = rows;
+                        }
+                        return data;
+                    })
+                }
+                return data;
             });
             
-            this.setState({ loading: false, myClasses: [] })
+            console.log('classes info: ', data)
+
+            this.setState({ loading: false, myClasses: data })
         })
-        .catch(function (err) {
-            this.setState({ loading: false })
-        });
+            .catch(function (err) {
+                this.setState({ loading: false })
+            });
     }
 
     /**
@@ -74,20 +82,19 @@ export default class MyClasses extends React.Component {
     }
 
     render() {
+        const { loading, myClasses } = this.state;
+
         return (
             <Layout>
-                <Video />
+                <Loading status={loading} />
+                <Video rows={myClasses} />
                 <div className="site-section">
                     <div className="container">
-                        <div className="row mb-5">
+                        <div className="row mb-3">
                             <div className="col-lg-12">
-                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
-                                Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic
-                                country, in which roasted parts of sentences fly into your mouth.</p>
-                                <p>The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious
-                                Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made
-                                herself on the way.</p>
+                                <h1 className="mb-3">{myClasses.name}</h1>
+                                <h4 className="mb-4">{myClasses.personal_name}</h4>
+                                <p>{myClasses.description}</p>
                             </div>
                         </div>
                     </div>

@@ -14,11 +14,11 @@ const HEADERS = {
  * @param {json} body 
  */
 export function addUsersClassesByLevel(body){
-    return axios.post(`${URL}/addUsersClassesByLevel`, body, { headers: HEADERS });
+    return axios.post(`${URL}/usersClassesByLevelAdd`, body, { headers: HEADERS });
 }
 
 /**
- * Get Users Classes By Level
+ * Get Users Classes By LevelusersClassesByLevelAdd
  * @param {json} body 
  */
 export function usersClassesLevelListByPhone(phoneNumber){
