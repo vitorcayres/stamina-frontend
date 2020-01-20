@@ -25,7 +25,8 @@ export default class MyClasses extends React.Component {
     * Component did mount
     */
     componentDidMount() {
-        this.setState({ loading: true })
+        let that = this;
+        that.setState({ loading: true })
         let phoneNumber = localStorage.getItem('phoneNumber');
         let level_id = this.props.match.params.level_id;
         let id = this.props.match.params.id;
@@ -50,11 +51,11 @@ export default class MyClasses extends React.Component {
             
             console.log('classes info: ', data)
 
-            this.setState({ loading: false, myClasses: data })
-        })
-            .catch(function (err) {
-                this.setState({ loading: false })
-            });
+            that.setState({ loading: false, myClasses: data })
+            
+        }).catch(function (err) {
+            that.setState({ loading: false })
+        });
     }
 
     /**

@@ -1,25 +1,13 @@
 import React from 'react'
+import firebase from 'firebase/app'
+import 'firebase/auth'
 import FormSendPincode from '../../components/Forms/Login/SendPincode'
 import FormValidatePincode from '../../components/Forms/Login/ValidatePincode'
 import Loading from '../../components/Loading'
+
 import { getUserbyPhone } from '../../services/Users'
 
-import firebase from 'firebase/app'
-import 'firebase/auth'
 import './styles.css'
-
-const firebaseConfig = {
-    apiKey: "AIzaSyAkx7qZGIo8PWyGVIAM7aLfdhOimxDeZcs",
-    authDomain: "stamina-frontend.firebaseapp.com",
-    databaseURL: "https://stamina-frontend.firebaseio.com",
-    projectId: "stamina-frontend",
-    storageBucket: "stamina-frontend.appspot.com",
-    messagingSenderId: "191142280861",
-    appId: "1:191142280861:web:279205d029b311f008de74",
-    measurementId: "G-4F7GGD9B4S"
-};
-
-firebase.initializeApp(firebaseConfig);
 
 export default class Auth extends React.Component {
 
@@ -98,7 +86,7 @@ export default class Auth extends React.Component {
     
             if (confirmResult && codeInput.length) {
                 confirmResult.confirm(codeInput)
-                    .then((user) => { localStorage.setItem('phoneNumber', this.state.phoneNumber); })
+                    .then((user) => { localStorage.setItem('phoneNumber', this.state.phoneNumber); localStorage.setItem('session', Math.floor(Math.random() * 10000000000)); })
                     .catch(error => this.setState({ loading: false, message: 'Ops, ocorreu um erro, tente novamente! :(' }));
             }
         }

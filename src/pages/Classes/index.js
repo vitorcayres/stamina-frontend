@@ -28,7 +28,9 @@ export default class Classes extends React.Component {
     componentDidMount() {
         let phoneNumber = localStorage.getItem('phoneNumber');
         let id = this.props.match.params.id;
-        this.setState({ loading: true, id: id })
+        let that = this;
+
+        that.setState({ loading: true, id: id })
 
         usersClassesLevelListByPhone(phoneNumber).then(response => {
             let data = response.data[0].data;
@@ -41,10 +43,10 @@ export default class Classes extends React.Component {
                 return classes;
             });
             
-            this.setState({ loading: false, classes: classes })
+            that.setState({ loading: false, classes: classes })
         })
         .catch(function (err) {
-            this.setState({ loading: false })
+            that.setState({ loading: false })
         });
     }
 
